@@ -1,12 +1,12 @@
 steps:
 - name: gcr.io/cloud-builders/gcloud
   args:
-  - 'kms',
-  - 'decrypt',
-  - '--ciphertext-file=secrets.json.enc',
-  - '--plaintext-file=secrets.json',
-  - '--location=global',
-  - '--keyring=blenz-dev',
+  - 'kms'
+  - 'decrypt'
+  - '--ciphertext-file=secrets.json.enc'
+  - '--plaintext-file=secrets.json'
+  - '--location=global'
+  - '--keyring=blenz-dev'
   - '--key=firebase-access-token'
 
 - name: node:10.15.1
