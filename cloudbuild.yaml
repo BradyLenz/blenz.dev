@@ -1,8 +1,10 @@
 steps:
-- name: 'gcr.io/cloud-builders/npm'
+- name: node:10.15.1
+  entrypoint: npm
   args: [ 'install' ]
   dir: 'blenz.dev'
-- name: 'gcr.io/cloud-builders/npm'
+- name: node:10.15.1
+  entrypoint: npm
   args: [ 'run', 'build' ]
   dir: 'blenz.dev'
 - name: 'gcr.io/green-tract-254701/firebase'
