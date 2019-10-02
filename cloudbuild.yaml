@@ -1,7 +1,9 @@
 steps:
 - name: 'gcr.io/cloud-builders/npm'
   args: [ 'install' ]
+  dir: 'blenz.dev',
 - name: 'gcr.io/cloud-builders/npm'
   args: [ 'run', 'build' ]
+  dir: 'blenz.dev',
 - name: 'gcr.io/green-tract-254701/firebase'
   args: [ 'deploy', '-P', 'blenz.dev', '--token', '1/_6byA09ZyJUv2J1nmXjNEXtxoTcc4m7YgnTtgwwzr0E']
