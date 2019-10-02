@@ -16,7 +16,7 @@ steps:
   args:
   - 'deploy'
   - '--token'
-  - '$$FIREBASE_TOKEN'
+  - '"$$FIREBASE_TOKEN"'
   secretEnv:
   - 'FIREBASE_TOKEN'
 
