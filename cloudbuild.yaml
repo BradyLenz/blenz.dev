@@ -16,11 +16,11 @@ steps:
   args:
   - 'deploy'
   - '--token'
-  - '$$FIREBASE_ACCESS_TOKEN'
+  - '$$FIREBASE_TOKEN'
   secretEnv:
-  - 'FIREBASE_ACCESS_TOKEN'
+  - 'FIREBASE_TOKEN'
 
 secrets:
 - kmsKeyName: projects/green-tract-254701/locations/global/keyRings/blenz-dev/cryptoKeys/firebase-access-token
   secretEnv:
-      FIREBASE_ACCESS_TOKEN: CiQAbFIF3/O01QpiMHvYJB6iMHP+jKkn2LnjWSKePXBolEExHU0SawCwmm6w3cokE9grusfgRlZe5BSDK+6fNqC4/QMCzFehJYP9IE1P2TVtgzcWpj1YN0qiw49CYJisBbzqI3jR/Jl+h1eO/DNXCqWeAHG1SzKHSiy7NXruvdSo2Dz+Szvk0rxLKnntpjW0dv9r
+    FIREBASE_TOKEN: CiQAbFIF3zxqImdRcMgdCgKAht9brMDcp/oFSZyGpGEdYuddScQSVgCwmm6w42bANwRnBxEF0BhCo+WqVI4tIzA9CztuQpsoMsKz74NhhiSuOeKacieulzTllQDJO34cAwB96XvAekSYqOQ8Qcuo/7S0lrA4ZF+lfOhkJ7z+
