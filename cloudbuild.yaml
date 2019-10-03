@@ -15,6 +15,7 @@ steps:
 - name: 'gcr.io/green-tract-254701/firebase'
   entrypoint: 'bash'
   args:
+  - 'firebase'
   - 'deploy'
   - '--token'
   - '$$FIREBASE_TOKEN'
