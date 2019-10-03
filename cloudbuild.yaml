@@ -15,10 +15,6 @@ steps:
 - name: 'gcr.io/green-tract-254701/firebase'
   args:
   - 'deploy'
-  - '--token'
-  - '$$FIREBASE_TOKEN'
-  secretEnv:
-  - 'FIREBASE_TOKEN'
 
 secrets:
 - kmsKeyName: projects/green-tract-254701/locations/global/keyRings/blenz-dev/cryptoKeys/firebase-access-token
