@@ -17,7 +17,7 @@ steps:
   - 'firebase'
   - 'deploy'
   - '--token'
-  - '${FIREBASE_TOKEN}xs'
+  - '${$FIREBASE_TOKEN}'
   secretEnv:
   - 'FIREBASE_TOKEN'
 
