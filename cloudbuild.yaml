@@ -14,10 +14,9 @@ steps:
 
 - name: 'gcr.io/green-tract-254701/firebase'
   args:
-  - 'firebase'
   - 'deploy'
   - '--token'
-  - '${$FIREBASE_TOKEN}'
+  - '$$FIREBASE_TOKEN'
   secretEnv:
   - 'FIREBASE_TOKEN'
 
