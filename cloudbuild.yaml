@@ -21,4 +21,4 @@ steps:
 secrets:
 - kmsKeyName: projects/green-tract-254701/locations/global/keyRings/blenz-dev/cryptoKeys/firebase-access-token
   secretEnv:
-    FIREBASE_TOKEN: CiQAbFIF3zxqImdRcMgdCgKAht9brMDcp/oFSZyGpGEdYuddScQSVgCwmm6w42bANwRnBxEF0BhCo+WqVI4tIzA9CztuQpsoMsKz74NhhiSuOeKacieulzTllQDJO34cAwB96XvAekSYqOQ8Qcuo/7S0lrA4ZF+lfOhkJ7z+
+    FIREBASE_TOKEN: CiQAbFIF30hHMDOGoKX41EJET+KgyT+ONI2qEgaBNL/rAaBKbiISkAEAsJpusLIrAh3p1b6flXJLSXJBpQiQC5jD3Tq/nw16MgmL3w8JkjLpOnuOunC3iqJfWjp1Q8vl3xWbyOBF/e9l+USFciO0LUapQjlFrECDOO468wPyp1yfjHDsIMewKolmIx/WLjTlIwSEc8S9vKy4t87vNgXfADnh2TGJStdRFwcBc4KhxfKbXShcG348hrA=
