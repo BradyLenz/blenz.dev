@@ -1,9 +1,16 @@
 import React from 'react';
+import { ThemeProvider } from '@material-ui/styles';
+import { BrowserRouter } from 'react-router-dom';
 
 import { Home } from './components/home';
+import { theme } from './theme';
 
-export function App() {
+export const App = () => {
     return (
-        <Home/>
+        <BrowserRouter>
+            <ThemeProvider theme={theme}>
+                <Home/>
+            </ThemeProvider>
+        </BrowserRouter>
     );
-}
+};
