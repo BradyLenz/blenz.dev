@@ -67,7 +67,7 @@ node_modules/
 .env
 
 # production
-/blenz.dev/build/
+build/
 
 # Logs
 logs
