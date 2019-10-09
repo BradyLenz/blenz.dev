@@ -2,31 +2,39 @@ import React from 'react';
 import {
     Box,
     CssBaseline,
+    Container,
 } from '@material-ui/core';
 
 import { Header } from '../header';
-import { Intro } from '../intro';
+import { Intro } from './intro';
+import {
+    ISection,
+    content,
+} from '../../util/data';
 
 export const Home = () => {
     return (
-        <Box>
+        <Container maxWidth='lg'>
             <CssBaseline/>
             <Header/>
-            <Box minHeight='100vh'>
+            <Box height='100vh'>
                 <Intro/>
             </Box>
-            <Box minHeight='100vh'>
-                About Me
-            </Box>
-            <Box minHeight='100vh'>
-                Work Experience
-            </Box>
-            <Box minHeight='100vh'>
-                Projects
-            </Box>
-            <Box minHeight='100vh'>
-                Contact
-            </Box>
-        </Box>
+            {
+                content.map((item: ISection) => {
+                    return (
+                        <Box
+                            key={content.indexOf(item)}
+                            minHeight='100vh'
+                            id={item.link}
+                        >
+                            {
+                                (item.element) ? item.element() : item.title
+                            }
+                        </Box>
+                    );
+                })
+            }
+        </Container>
     );
 };
