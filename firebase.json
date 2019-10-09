@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "blenz.dev/build",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
