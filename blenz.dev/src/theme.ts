@@ -3,21 +3,19 @@ import { createMuiTheme } from '@material-ui/core';
 export const theme = createMuiTheme({
     palette: {
         primary: {
-            main: '#d50000',
-            light: '#ff5131',
-            dark: '#9c0000',
+            main: '#31708E',
         },
         secondary: {
-            main: '#fafafa',
-            light: '#ffffff',
-            dark: '#c7c7c7',
+            main: '#8FC1E3',
+        },
+        background: {
+            default: '#31708E',
         },
         type: 'light',
     },
     typography: {
         h1: {
-            fontWeight: 500,
-            fontFamily: 'sans-serif',
+            fontWeight: 600,
         },
     },
     spacing: 4,
