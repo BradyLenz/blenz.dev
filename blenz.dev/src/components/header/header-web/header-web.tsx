@@ -6,13 +6,13 @@ import {
 import {
     makeStyles,
 } from '@material-ui/styles';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-scroll';
 
 import { content } from '../../../util/data';
 
 const useStyles = makeStyles({
-    root: {
-        height: 'inherit',
+    active: {
+        fontWeight: 'bolder',
     },
 });
 
@@ -24,7 +24,6 @@ export const HeaderWeb = () => {
             container
             justify='center'
             alignItems='center'
-            className={classes.root}
             spacing={4}
         >
             {
@@ -36,8 +35,12 @@ export const HeaderWeb = () => {
                         >
                             <Button
                                 variant='outlined'
+                                color='secondary'
                                 component={Link}
-                                to={`#${item.link}`}
+                                smooth={true}
+                                spy={true}
+                                to={item.link}
+                                activeClass={classes.active}
                             >
                                 {item.headerContent}
                             </Button>
