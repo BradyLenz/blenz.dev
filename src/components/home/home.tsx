@@ -4,13 +4,15 @@ import {
     Container,
 } from '@material-ui/core';
 
-import { Header } from '../shared/header';
-import { Footer } from '../shared/footer';
-import { Intro } from './intro';
+import {
+    Header,
+    Footer,
+} from '../shared';
 import {
     ISection,
     content,
-} from '../../util/data';
+} from '../../util';
+import { Intro } from '.';
 
 export const Home = () => {
     return (

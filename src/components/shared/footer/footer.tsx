@@ -5,7 +5,7 @@ import {
     IconButton,
     createStyles,
     Typography,
-    Link
+    Link,
 } from '@material-ui/core';
 
 import { globals } from '../../../util';
