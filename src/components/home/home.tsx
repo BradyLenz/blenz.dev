@@ -1,11 +1,11 @@
 import React from 'react';
 import {
     Box,
-    CssBaseline,
     Container,
 } from '@material-ui/core';
 
-import { Header } from '../header';
+import { Header } from '../shared/header';
+import { Footer } from '../shared/footer';
 import { Intro } from './intro';
 import {
     ISection,
@@ -14,27 +14,27 @@ import {
 
 export const Home = () => {
     return (
-        <Container maxWidth='lg'>
-            <CssBaseline/>
+        <>
             <Header/>
-            <Box height='100vh'>
+            <Container maxWidth='lg'>
                 <Intro/>
-            </Box>
-            {
-                content.map((item: ISection) => {
-                    return (
-                        <Box
-                            key={content.indexOf(item)}
-                            minHeight='100vh'
-                            id={item.link}
-                        >
-                            {
-                                (item.element) ? item.element() : item.title
-                            }
-                        </Box>
-                    );
-                })
-            }
-        </Container>
+                {
+                    content.map((item: ISection) => {
+                        return (
+                            <Box
+                                key={content.indexOf(item)}
+                                minHeight='100vh'
+                                id={item.link}
+                            >
+                                {
+                                    item.element(item)
+                                }
+                            </Box>
+                        );
+                    })
+                }
+            </Container>
+            <Footer/>
+        </>
     );
 };
