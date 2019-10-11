@@ -4,12 +4,16 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { Home } from './components/home';
 import { theme } from './theme';
-import { Box } from '@material-ui/core';
+import {
+    Box,
+    CssBaseline,
+} from '@material-ui/core';
 
 export const App = () => {
     return (
         <BrowserRouter>
             <ThemeProvider theme={theme}>
+                <CssBaseline/>
                 <Box bgcolor='#F7F9FB'>
                     <Home/>
                 </Box>
