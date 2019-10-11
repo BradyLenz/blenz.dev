@@ -17,7 +17,7 @@ import {
 const useStyles = makeStyles((theme) => createStyles({
     root: {
         height: 64,
-        background: theme.palette.background.default,
+        background: theme.palette.primary.main,
     },
 }));
 

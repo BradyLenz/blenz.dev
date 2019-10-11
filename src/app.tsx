@@ -3,7 +3,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import { BrowserRouter } from 'react-router-dom';
 
 import { Home } from './components/home';
-import { theme } from './theme';
+import theme from './theme';
 import {
     Box,
     CssBaseline,
