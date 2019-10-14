@@ -11,7 +11,7 @@ import {
 import {
     ISection,
     content,
-} from '../../util';
+} from '../../data';
 import { Intro } from '.';
 
 export const Home = () => {

@@ -8,9 +8,12 @@ import {
 } from '@material-ui/styles';
 import { Link } from 'react-scroll';
 
-import { content } from '../../../util/data';
+import { content } from '../../../data/home';
 
 const useStyles = makeStyles({
+    button: {
+        width: 130,
+    },
     active: {
         fontWeight: 'bolder',
     },
@@ -38,9 +41,12 @@ export const HeaderWeb = () => {
                                 color='secondary'
                                 component={Link}
                                 smooth={true}
+                                duration={500}
                                 spy={true}
+                                hashSpy={true}
                                 to={item.link}
                                 activeClass={classes.active}
+                                className={classes.button}
                             >
                                 {item.headerContent}
                             </Button>

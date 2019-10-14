@@ -9,6 +9,7 @@ import {
     Toolbar,
     makeStyles,
     createStyles,
+    ListItemIcon,
 } from '@material-ui/core';
 import {
     Menu,
@@ -19,7 +20,7 @@ import { Link } from 'react-scroll';
 import {
     content,
     ISection,
-} from '../../../util/data';
+} from '../../../data/home';
 
 const useStyles = makeStyles((theme) => createStyles({
     root: {
@@ -68,6 +69,8 @@ export const HeaderMobile = () => {
                                     onClick={toggleDrawer}
                                     component={Link}
                                     smooth={true}
+                                    duration={500}
+                                    hashSpy={true}
                                     spy={true}
                                     to={item.link}
                                     color='secondary'

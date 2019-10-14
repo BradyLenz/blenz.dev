@@ -8,7 +8,7 @@ import {
     Link,
 } from '@material-ui/core';
 
-import { globals } from '../../util';
+import { globals } from '../../data';
 import {
     SuperCenter,
     GitHub,
@@ -18,16 +18,16 @@ import {
 const useStyles = makeStyles((theme) => createStyles({
     greeting: {
         color: theme.palette.text.secondary,
-        paddingTop: 20,
+        marginBottom: 10,
     },
     name: {
         color: theme.palette.text.primary,
-        paddingTop: 10,
+        paddingBottom: 5,
+        marginBottom: 20,
     },
     description: {
         maxWidth: 450,
         margin: 'auto',
-        paddingTop: 20,
         marginBottom: 100,
     },
     iconButton: {

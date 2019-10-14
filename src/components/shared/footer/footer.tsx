@@ -8,7 +8,7 @@ import {
     Link,
 } from '@material-ui/core';
 
-import { globals } from '../../../util';
+import { globals } from '../../../data';
 import {
     GitHub,
     LinkedIn,

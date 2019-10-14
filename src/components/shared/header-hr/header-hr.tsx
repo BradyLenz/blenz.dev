@@ -22,6 +22,7 @@ export const HeaderHR = (props: IProps) => {
     return (
         <Typography
             variant='h2'
+            align='center'
             className={classes.root}
             {...props}
         >

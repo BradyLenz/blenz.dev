@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ISection } from '../../util';
+import { ISection } from '../../data';
 import {
     SuperCenter,
     HeaderHR,
