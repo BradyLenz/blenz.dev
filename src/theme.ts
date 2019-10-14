@@ -21,4 +21,7 @@ const theme = createMuiTheme({
     },
 });
 
+theme.typography.h1.fontWeight = 600;
+theme.typography.h2.fontWeight = 500;
+
 export default responsiveFontSizes(theme);
