@@ -7,36 +7,31 @@ import {
     Link,
 } from '@material-ui/core';
 
-import {
-    ISection,
-    contactData,
-} from '../../data';
+import { contactData } from '../../data';
 import {
     SuperCenter,
     HeaderHR,
 } from '../shared';
 
 const useStyles = makeStyles({
-    title: {
-        marginBottom: 40,
-    },
     message: {
+        marginTop: 40,
         maxWidth: 450,
         marginBottom: 40,
+        margin: 'auto',
     },
     emailButton: {
         margin: 'auto',
     },
 });
 
-export const Contact = (props: ISection) => {
+export const Contact = () => {
     const classes = useStyles();
 
     return (
         <SuperCenter>
             <HeaderHR
-                text={props.title}
-                className={classes.title}
+                text={contactData.header}
             />
             <Typography
                 align='center'
@@ -49,14 +44,19 @@ export const Contact = (props: ISection) => {
                 justify='center'
             >
                 <Grid item>
-                    <Button
-                        variant='contained'
-                        size='large'
-                        color='primary'
-                        className={classes.emailButton}
+                    <Link
+                        href={contactData.button.link}
+                        target='_blank'
                     >
-                        {contactData.button.text}
-                    </Button>
+                        <Button
+                            variant='contained'
+                            size='large'
+                            color='primary'
+                            className={classes.emailButton}
+                        >
+                            {contactData.button.text}
+                        </Button>
+                    </Link>
                 </Grid>
             </Grid>
         </SuperCenter>
