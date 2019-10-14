@@ -1,6 +1,11 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/styles';
-import { BrowserRouter } from 'react-router-dom';
+import {
+    BrowserRouter,
+    Route,
+    Redirect,
+    Switch,
+} from 'react-router-dom';
 
 import { Home } from './components/home';
 import theme from './theme';
@@ -15,7 +20,13 @@ export const App = () => {
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
                 <Box bgcolor='#F7F9FB'>
-                    <Home/>
+                    <Switch>
+                        <Route
+                            path='/'
+                            component={Home}
+                        />
+                        <Redirect to='/'/>
+                    </Switch>
                 </Box>
             </ThemeProvider>
         </BrowserRouter>
