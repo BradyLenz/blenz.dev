@@ -1,21 +1,41 @@
 import * as portrait from '../assets/portrait.jpg';
 
 export interface IAbout {
-    summary: string;
-    skillsHeader: string;
+    header: string;
     skills: string[];
-    image: string;
+    image: IImage;
+    button: IButton;
+}
+
+interface IImage {
+    src: string;
+    alt: string;
+}
+
+interface IButton {
+    text: string;
+    link: string;
 }
 
 export const aboutData: IAbout = {
-    summary: 'Placeholder summary',
-    skillsHeader: 'Here are some technologies I am familar with:',
+    header: 'About Me',
     skills: [
+        'Python',
+        'C#',
+        'C',
+        'Java',
+        'Typescript',
         'React',
         'Redux',
-        'Python',
         'SQL',
-        'NoSQL',
+        'Couchbase',
     ],
-    image: portrait.default,
+    image: {
+        src: portrait.default,
+        alt: 'Portrait',
+    },
+    button: {
+        text: 'View Resume',
+        link: '',
+    },
 };

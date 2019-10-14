@@ -8,7 +8,6 @@ import {
 } from '../components/home';
 
 export interface ISection {
-    title: string;
     headerContent: string;
     link: string;
     element: (props: ISection) => React.ReactElement;
@@ -16,27 +15,23 @@ export interface ISection {
 
 export const content: ISection[] = [
     {
-        title: 'About Me',
         headerContent: 'About',
         link: 'about',
-        element: (props: ISection) => <About {...props}/>,
+        element: () => <About/>,
     },
     {
-        title: 'Experience',
         headerContent: 'Experience',
         link: 'experience',
-        element: (props: ISection) => <Experience {...props}/>,
+        element: () => <Experience/>,
     },
     {
-        title: 'Featured Projects',
         headerContent: 'Projects',
         link: 'projects',
-        element: (props: ISection) => <Projects {...props}/>,
+        element: () => <Projects/>,
     },
     {
-        title: 'Contact Me',
         headerContent: 'Contact',
         link: 'contact',
-        element: (props: ISection) => <Contact {...props}/>,
+        element: () => <Contact/>,
     },
 ];

@@ -1,14 +1,16 @@
 export interface IContact {
+    header: string;
     message: string;
     button: IButton;
 }
 
-export interface IButton {
+interface IButton {
     text: string;
     link: string;
 }
 
 export const contactData: IContact = {
+    header: 'Contact Me',
     message: `
         I am currently looking for a full-time position as a Software Engineer.
         Feel free to contact me via email or LinkedIn.
