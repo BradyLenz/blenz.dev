@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { ISection } from '../../data';
+import { projectData } from '../../data';
 import {
     SuperCenter,
     HeaderHR,
 } from '../shared';
 
-export const Projects = (props: ISection) => {
+export const Projects = () => {
     return (
         <SuperCenter>
-            <HeaderHR text={props.title}/>
+            <HeaderHR text={projectData.header}/>
         </SuperCenter>
     );
 };

@@ -9,7 +9,6 @@ import {
     Toolbar,
     makeStyles,
     createStyles,
-    ListItemIcon,
 } from '@material-ui/core';
 import {
     Menu,

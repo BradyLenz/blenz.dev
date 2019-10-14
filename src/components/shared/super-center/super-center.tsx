@@ -2,18 +2,16 @@ import React from 'react';
 import {
     makeStyles,
     Grid,
-    Toolbar,
 } from '@material-ui/core';
+import { GridProps } from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
     root: {
         minHeight: '100vh',
-        // marginTop: -64,
-        // paddingTop: 64,
     },
 });
 
-interface IProps {
+interface IProps extends GridProps {
     children: React.ReactElement | React.ReactElement[];
 }
 
@@ -21,19 +19,16 @@ export const SuperCenter = (props: IProps) => {
     const classes = useStyles();
 
     return (
-        <>
-            {/*<Toolbar/>*/}
-            <Grid
-                container
-                justify='center'
-                alignItems='center'
-                className={classes.root}
-                direction='column'
-            >
-                <Grid item>
-                    {props.children}
-                </Grid>
+        <Grid
+            container
+            justify='center'
+            alignItems='center'
+            className={classes.root}
+            direction='column'
+        >
+            <Grid item>
+                {props.children}
             </Grid>
-        </>
+        </Grid>
     );
 };
