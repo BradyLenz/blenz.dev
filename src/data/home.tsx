@@ -22,13 +22,13 @@ export const content: ISection[] = [
         element: (props: ISection) => <About {...props}/>,
     },
     {
-        title: 'Work Experience',
+        title: 'Experience',
         headerContent: 'Experience',
         link: 'experience',
         element: (props: ISection) => <Experience {...props}/>,
     },
     {
-        title: 'Projects',
+        title: 'Featured Projects',
         headerContent: 'Projects',
         link: 'projects',
         element: (props: ISection) => <Projects {...props}/>,
