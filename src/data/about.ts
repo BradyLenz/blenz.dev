@@ -35,6 +35,6 @@ export const aboutData: IAbout = {
     },
     button: {
         text: 'View Resume',
-        link: '',
+        link: 'resume.pdf',
     },
 };

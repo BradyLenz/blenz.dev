@@ -111,6 +111,8 @@ export const About = () => {
                             <Button
                                 variant='contained'
                                 color='primary'
+                                href={aboutData.button.link}
+                                target='_blank'
                                 className={classes.button}
                             >
                                 {aboutData.button.text}
