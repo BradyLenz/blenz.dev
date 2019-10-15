@@ -30,9 +30,7 @@ export const Contact = () => {
 
     return (
         <SuperCenter>
-            <HeaderHR
-                text={contactData.header}
-            />
+            <HeaderHR text={contactData.header}/>
             <Typography
                 align='center'
                 className={classes.message}
