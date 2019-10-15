@@ -3,7 +3,6 @@ import {
     Typography,
     makeStyles,
     createStyles,
-    Grid,
 } from '@material-ui/core';
 import { TypographyProps } from '@material-ui/core/Typography';
 
@@ -13,8 +12,10 @@ const useStyles = makeStyles((theme) => createStyles({
     },
     hr: {
         display: 'flex',
+        justifyContent: 'center',
         alignItems: 'center',
         whiteSpace: 'nowrap',
+        margin: 'auto',
         '&::before': {
             backgroundColor: theme.palette.secondary.main,
             content: '""',
@@ -46,9 +47,6 @@ const useStyles = makeStyles((theme) => createStyles({
             },
         },
     },
-    container: {
-        width: '100%',
-    },
 }));
 
 interface IProps extends TypographyProps {
@@ -59,24 +57,17 @@ export const HeaderHR = (props: IProps) => {
     const classes = useStyles(props);
 
     return (
-        <Grid
-            container
-            justify='center'
-            className={classes.container}
+        <div
+            className={classes.hr}
         >
-            <Grid
-                item
-                className={classes.hr}
+            <Typography
+                variant='h2'
+                align='center'
+                className={classes.root}
+                {...props}
             >
-                <Typography
-                    variant='h2'
-                    align='center'
-                    className={classes.root}
-                    {...props}
-                >
-                    {props.text}
-                </Typography>
-            </Grid>
-        </Grid>
+                {props.text}
+            </Typography>
+        </div>
     );
 };
