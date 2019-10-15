@@ -48,7 +48,7 @@ export const experienceData: IExperienceData = {
             details: [
                 'A playground for software ideas',
                 'Utilized with many modern technologies such as Python, Typescript, Angular, React, and Node.js',
-                'Worked in a small team exploring software solutions targetting the Transcend UW competition',
+                'Worked in a small team exploring software solutions targeting the Transcend UW competition',
             ],
             image: {
                 src: sudox.default,
@@ -62,7 +62,7 @@ export const experienceData: IExperienceData = {
             duration: 'April 2018 - Present',
             details: [
                 'Worked extensively with Python, Django, and Flask',
-                'Gained experience working with Go, and Couchbase',
+                'Gained experience working with Go and Couchbase',
                 'Developed a pair of services to aid in outage detection',
             ],
             image: {
@@ -76,7 +76,7 @@ export const experienceData: IExperienceData = {
             position: 'Facility Supervisor',
             duration: 'November 2017 - Present',
             details: [
-                'Gained valuable leadership skils from overseeing student employee on shift',
+                'Gained valuable leadership skills from overseeing student employees on shift',
                 'Handled member-service related interactions and decisions',
             ],
             image: {

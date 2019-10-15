@@ -59,7 +59,7 @@ export const About = () => {
                     className={classes.content}
                 >
                     <Typography variant='body1'>
-                        I am a highly-motivated individual, possessing excellent time-management skills.
+                        I am a highly motivated individual, possessing excellent time management skills.
                         Some topics of particular interest to me include machine learning and optimization.
                     </Typography>
                     <Typography
