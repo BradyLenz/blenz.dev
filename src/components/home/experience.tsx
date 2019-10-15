@@ -40,14 +40,8 @@ const useStyles = makeStyles((theme) => createStyles({
         color: theme.palette.primary.main,
         fontWeight: 500,
     },
-    position: {
-
-    },
     duration: {
         marginBottom: 10,
-    },
-    details: {
-
     },
 }));
 
