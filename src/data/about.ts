@@ -21,10 +21,9 @@ export const aboutData: IAbout = {
     header: 'About Me',
     skills: [
         'Python',
-        'C#',
-        'C',
-        'Java',
         'Typescript',
+        'C#',
+        'Java',
         'React',
         'Redux',
         'SQL',

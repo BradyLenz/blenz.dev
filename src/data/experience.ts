@@ -1,7 +1,9 @@
-import uw from '../assets/experience/uw.svg';
 import * as qgenda from '../assets/experience/qgenda.png';
-import tds from '../assets/experience/tds.svg';
+import * as sudox from '../assets/experience/sudox.png';
 import * as madhacks from '../assets/experience/madhacks.png';
+import * as recwell from '../assets/experience/recwell.png';
+import uw from '../assets/experience/uw.svg';
+import tds from '../assets/experience/tds.svg';
 
 export interface IExperienceData {
     header: string;
@@ -39,17 +41,47 @@ export const experienceData: IExperienceData = {
             },
         },
         {
+            title: 'Sudo.X',
+            link: 'https://www.linkedin.com/company/sudo.x/about/',
+            position: 'Co-Founder',
+            duration: 'April 2017 - Present',
+            details: [
+                'A playground for software ideas',
+                'Utilized with many modern technologies such as Python, Typescript, Angular, React, and Node.js',
+                'Worked in a small team exploring software solutions targetting the Transcend UW competition',
+            ],
+            image: {
+                src: sudox.default,
+                alt: 'Sudo.X',
+            },
+        },
+        {
             title: 'TDS Telecom',
             link: 'https://tdstelecom.com/',
             position: 'Intern (Application Management and Development)',
             duration: 'April 2018 - Present',
             details: [
-                'Worked with Python, Go, Django, Flask, Couchbase',
+                'Worked extensively with Python, Django, and Flask',
+                'Gained experience working with Go, and Couchbase',
                 'Developed a pair of services to aid in outage detection',
             ],
             image: {
                 src: tds,
                 alt: 'TDS Telecom',
+            },
+        },
+        {
+            title: 'UW-Madison RecWell',
+            link: 'https://recwell.wisc.edu',
+            position: 'Facility Supervisor',
+            duration: 'November 2017 - Present',
+            details: [
+                'Gained valuable leadership skils from overseeing student employee on shift',
+                'Handled member-service related interactions and decisions',
+            ],
+            image: {
+                src: recwell.default,
+                alt: 'RecWell',
             },
         },
         {
@@ -70,8 +102,8 @@ export const experienceData: IExperienceData = {
             position: 'Product Development Intern',
             duration: 'Summer 2019',
             details: [
-                'Worked with Typescript, C#, React, Redux, LINQ',
-                'Agile development process',
+                'Developed code in Typescript, C#, React, Redux, LINQ',
+                'Worked in an agile development team',
             ],
             image: {
                 src: qgenda.default,

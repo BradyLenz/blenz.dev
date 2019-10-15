@@ -1,23 +1,39 @@
+import * as site from '../assets/projects/blenz.dev.png';
+import { globals } from './globals';
+
 export interface IProjectData {
     header: string;
     projects: IProject[];
 }
 
 export interface IProject {
-    header: string;
     title: string;
     description: string;
-    image: string;
+    link: string;
+    image: Image;
+    skills: string[];
+}
+
+interface Image {
+    src: string;
+    alt: string;
 }
 
 export const projectData: IProjectData = {
     header: 'Featured Projects',
     projects: [
         {
-            header: 'Featured Projects',
             title: 'blenz.dev',
-            description: 'Personal site',
-            image: '',
+            description: 'Personal website built using react and hosted on Google Firebase',
+            link: `${globals.github}/blenz.dev`,
+            image: {
+                src: site.default,
+                alt: 'blenz.dev',
+            },
+            skills: [
+                'Typescript',
+                'React',
+            ],
         },
     ],
 };
