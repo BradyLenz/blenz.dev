@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => createStyles({
         marginLeft: 100,
         [theme.breakpoints.down('sm')]: {
             margin: '0px auto',
+            marginBottom: 40,
         },
         borderRadius: 10,
         maxWidth: 300,
@@ -32,8 +33,8 @@ const useStyles = makeStyles((theme) => createStyles({
         maxWidth: 500,
     },
     button: {
-        marginTop: 20,
-        marginBottom: 20,
+        marginTop: 40,
+        marginBottom: 40,
     },
     lineSpace: {
         marginTop: '1em',
@@ -58,19 +59,20 @@ export const About = () => {
                     className={classes.content}
                 >
                     <Typography variant='body1'>
-                        I'm a software engineer from Madison, WI.
+                        I am a highly-motivated individual, possessing excellent time-management skills.
+                        Some topics of particular interest to me include machine learning and optimization.
                     </Typography>
                     <Typography
                         variant='body1'
                         className={classes.lineSpace}
                     >
-                        I will be graduation from the
+                        I will be graduating from the
                         &nbsp;
                         <Link href='https://wisc.edu' target='_blank'>
                             University of Wisconsin - Madison
                         </Link>
                         &nbsp;
-                            in December 2019 with a degree in Computer Science and in Mathematics
+                        in December 2019 with degrees in Computer Science and Mathematics.
                     </Typography>
                     <Typography variant='body1' className={classes.lineSpace}>
                         Here are some technologies I'm familiar with:
@@ -78,6 +80,7 @@ export const About = () => {
                     <Grid
                         container
                         justify='center'
+                        className={classes.lineSpace}
                     >
                         {
                             aboutData.skills.map((skill, index) => {
@@ -102,7 +105,7 @@ export const About = () => {
                     </Grid>
                     <Grid
                         container
-                        justify='center'
+                        justify='flex-start'
                     >
                         <Grid item>
                             <Button
