@@ -23,5 +23,28 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCaW5yTrsVXBsSFvn0vXvpmZq0p9_0vAl8",
+        authDomain: "green-tract-254701.firebaseapp.com",
+        databaseURL: "https://green-tract-254701.firebaseio.com",
+        projectId: "green-tract-254701",
+        storageBucket: "green-tract-254701.appspot.com",
+        messagingSenderId: "218306605117",
+        appId: "1:218306605117:web:23964f52e26b59dc24fa54",
+        measurementId: "G-KDGZJV91F3"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
