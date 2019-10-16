@@ -43,6 +43,26 @@ export const HeaderMobile = () => {
         setState({open: !state.open});
     };
 
+    const onClickDrawerToggle = () => {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'Toggle',
+            eventAction: 'click',
+            eventLabel: 'Header',
+        });
+        toggleDrawer();
+    };
+
+    const onClickLink = () => {
+        ga('send', {
+            hitType: 'event',
+            eventCategory: 'Anchor',
+            eventAction: 'click',
+            eventLabel: 'Header',
+        });
+        toggleDrawer();
+    };
+
     return (
         <>
             <Grid
@@ -52,7 +72,7 @@ export const HeaderMobile = () => {
                 className={classes.root}
             >
                 <Grid item>
-                    <IconButton onClick={toggleDrawer}>
+                    <IconButton onClick={onClickDrawerToggle}>
                         {(state.open) ? <Close color='secondary'/> : <Menu color='secondary'/>}
                     </IconButton>
                 </Grid>
@@ -65,7 +85,7 @@ export const HeaderMobile = () => {
                             return (
                                 <ListItem
                                     key={content.indexOf(item)}
-                                    onClick={toggleDrawer}
+                                    onClick={onClickLink}
                                     component={Link}
                                     smooth={true}
                                     duration={500}

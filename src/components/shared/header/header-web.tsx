@@ -19,6 +19,15 @@ const useStyles = makeStyles({
     },
 });
 
+const onClickLink = () => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Anchor',
+        eventAction: 'click',
+        eventLabel: 'Header',
+    });
+};
+
 export const HeaderWeb = () => {
     const classes = useStyles();
 
@@ -47,6 +56,7 @@ export const HeaderWeb = () => {
                                 to={item.link}
                                 activeClass={classes.active}
                                 className={classes.button}
+                                onClick={onClickLink}
                             >
                                 {item.headerContent}
                             </Button>

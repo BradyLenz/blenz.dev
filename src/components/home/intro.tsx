@@ -36,6 +36,24 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
+const onClickLinkedIn = () => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'LinkedIn',
+        eventAction: 'click',
+        eventLabel: 'Intro',
+    });
+};
+
+const onClickGitHub = () => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'GitHub',
+        eventAction: 'click',
+        eventLabel: 'Intro',
+    });
+};
+
 export const Intro = () => {
     const classes = useStyles();
 
@@ -72,6 +90,7 @@ export const Intro = () => {
                     component={Link}
                     href={globals.github}
                     target='_blank'
+                    onClick={onClickGitHub}
                 >
                     <GitHub
                         color='primary'
@@ -82,6 +101,7 @@ export const Intro = () => {
                     component={Link}
                     href={globals.linkedin}
                     target='_blank'
+                    onClick={onClickLinkedIn}
                 >
                     <LinkedIn
                         color='primary'

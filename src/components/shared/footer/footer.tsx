@@ -21,6 +21,24 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
+const onClickLinkedIn = () => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'LinkedIn',
+        eventAction: 'click',
+        eventLabel: 'Footer',
+    });
+};
+
+const onClickGitHub = () => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'GitHub',
+        eventAction: 'click',
+        eventLabel: 'Footer',
+    });
+};
+
 export const Footer = () => {
     const classes = useStyles();
 
@@ -44,6 +62,7 @@ export const Footer = () => {
                             component={Link}
                             href={globals.linkedin}
                             target='_blank'
+                            onClick={onClickGitHub}
                         >
                             <GitHub color='secondary'/>
                         </IconButton>
@@ -54,6 +73,7 @@ export const Footer = () => {
                             component={Link}
                             href={globals.linkedin}
                             target='_blank'
+                            onClick={onClickLinkedIn}
                         >
                             <LinkedIn color='secondary'/>
                         </IconButton>

@@ -45,6 +45,24 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
+const onClickHeader = () => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Title',
+        eventAction: 'click',
+        eventLabel: 'Experience',
+    });
+};
+
+const onClickImage = () => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Image',
+        eventAction: 'click',
+        eventLabel: 'Experience',
+    });
+};
+
 export const Experience = () => {
     const classes = useStyles();
 
@@ -76,6 +94,7 @@ const PictureContainer = (props: IExperience) => {
                 <Link
                     href={props.link}
                     target='_blank'
+                    onClick={onClickImage}
                 >
                     <img
                         src={props.image.src}
@@ -114,6 +133,7 @@ const ExperienceItem = (props: IExperience) => {
                 <Typography
                     variant='h5'
                     className={classes.title}
+                    onClick={onClickHeader}
                 >
                     {props.title}
                 </Typography>

@@ -35,6 +35,12 @@ const useStyles = makeStyles((theme) => createStyles({
 }));
 
 const navigate = (link: string) => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Card',
+        eventAction: 'click',
+        eventLabel: 'Projects',
+    });
     return () => {
         window.open(link, '_blank');
     };

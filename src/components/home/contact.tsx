@@ -25,6 +25,15 @@ const useStyles = makeStyles({
     },
 });
 
+const onClickEmail = () => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'EmailButton',
+        eventAction: 'click',
+        eventLabel: 'Contact',
+    });
+};
+
 export const Contact = () => {
     const classes = useStyles();
 
@@ -51,6 +60,7 @@ export const Contact = () => {
                             size='large'
                             color='primary'
                             className={classes.emailButton}
+                            onClick={onClickEmail}
                         >
                             {contactData.button.text}
                         </Button>

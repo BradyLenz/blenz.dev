@@ -41,6 +41,33 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
+const onClickWisc = () => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Link',
+        eventAction: 'click',
+        eventLabel: 'About',
+    });
+};
+
+const onClickResume = () => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Resume',
+        eventAction: 'view',
+        eventLabel: 'About',
+    });
+};
+
+const onClickPortrait = () => {
+    ga('send', {
+        hitType: 'event',
+        eventCategory: 'Portrait',
+        eventAction: 'click',
+        eventLabel: 'About',
+    });
+};
+
 export const About = () => {
     const classes = useStyles();
 
@@ -68,7 +95,7 @@ export const About = () => {
                     >
                         I will be graduating from the
                         &nbsp;
-                        <Link href='https://wisc.edu' target='_blank'>
+                        <Link href='https://wisc.edu' target='_blank' onClick={onClickWisc}>
                             University of Wisconsin - Madison
                         </Link>
                         &nbsp;
@@ -114,6 +141,7 @@ export const About = () => {
                                 href={aboutData.button.link}
                                 target='_blank'
                                 className={classes.button}
+                                onClick={onClickResume}
                             >
                                 {aboutData.button.text}
                             </Button>
@@ -133,6 +161,7 @@ export const About = () => {
                             src={aboutData.image.src}
                             alt={aboutData.image.alt}
                             className={classes.image}
+                            onClick={onClickPortrait}
                         />
                     </Grid>
                 </Grid>
