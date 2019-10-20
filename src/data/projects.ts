@@ -1,4 +1,5 @@
 import * as site from '../assets/projects/blenz.dev.png';
+import * as madhacks from '../assets/projects/madhacks.png';
 import { globals } from './globals';
 
 export interface IProjectData {
@@ -31,8 +32,29 @@ export const projectData: IProjectData = {
                 alt: 'blenz.dev',
             },
             skills: [
-                'Typescript',
+                'Firebase',
+                'GCP',
                 'React',
+                'Typescript',
+            ],
+        },
+        {
+            title: 'GarboScore',
+            description: `
+                According to National Geographic, 91% of plastics are not recycled.
+                Through household incentivization, GarboScore provides a solution.
+            `,
+            link: `${globals.github}/GarboScore`,
+            image: {
+                src: madhacks.default,
+                alt: 'GarboScore',
+            },
+            skills: [
+                'AutoML',
+                'Firebase',
+                'GCP',
+                'React',
+                'Typescript',
             ],
         },
     ],

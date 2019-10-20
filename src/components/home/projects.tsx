@@ -55,6 +55,9 @@ export const Projects = () => {
             <Grid
                 container
                 justify='center'
+                alignItems='center'
+                direction='column'
+                spacing={8}
                 className={classes.root}
             >
                 {
