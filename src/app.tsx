@@ -19,7 +19,7 @@ export const App = () => {
         <BrowserRouter>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-                <Box bgcolor='#F7F9FB'>
+                <Box>
                     <Switch>
                         <Route
                             path='/'

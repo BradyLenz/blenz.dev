@@ -12,7 +12,7 @@ const theme = createMuiTheme({
             main: '#8bbbe3',
         },
         background: {
-            default: '#31708E',
+            default: '#F7F9FB',
         },
     },
     spacing: 4,
