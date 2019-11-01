@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import {
     Card,
     CardHeader,
@@ -34,13 +35,16 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
-const navigate = (link: string) => {
-    ga('send', {
-        hitType: 'event',
-        eventCategory: 'Card',
-        eventAction: 'click',
-        eventLabel: 'Projects',
+const logNavigation = (link: string) => {
+    ReactGA.event({
+        category: 'CardActionArea',
+        action: `Nav: ${link}`,
+        label: 'Projects',
     });
+};
+
+const navigate = (link: string) => {
+    logNavigation(link);
     return () => {
         window.open(link, '_blank');
     };

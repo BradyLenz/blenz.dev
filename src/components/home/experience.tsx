@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import {
     Grid,
     makeStyles,
@@ -6,6 +7,7 @@ import {
     Typography,
     Box,
     Link,
+    Paper,
 } from '@material-ui/core';
 import { ArrowRight } from '@material-ui/icons';
 
@@ -33,6 +35,9 @@ const useStyles = makeStyles((theme) => createStyles({
         paddingTop: 20,
         paddingLeft: 20,
     },
+    contentContainer: {
+        padding: 32,
+    },
     row: {
         marginTop: 20,
     },
@@ -45,23 +50,19 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
-const onClickHeader = () => {
-    ga('send', {
-        hitType: 'event',
-        eventCategory: 'Title',
-        eventAction: 'click',
-        eventLabel: 'Experience',
-    });
+const logImageButtonClick = (name: string) => {
+    return () => {
+        ReactGA.event({
+            category: 'ImageButton',
+            action: `Click: ${name}`,
+            label: 'Experience',
+        });
+    };
 };
 
-const onClickImage = () => {
-    ga('send', {
-        hitType: 'event',
-        eventCategory: 'Image',
-        eventAction: 'click',
-        eventLabel: 'Experience',
-    });
-};
+interface IExperienceProps extends IExperience {
+    index: number;
+}
 
 export const Experience = () => {
     const classes = useStyles();
@@ -73,7 +74,7 @@ export const Experience = () => {
                 {
                     experienceData.experiences.map((experience, index) => {
                         return (
-                            <ExperienceItem key={index} {...experience}/>
+                            <ExperienceItem key={index} {...experience} index={index}/>
                         );
                     })
                 }
@@ -94,7 +95,7 @@ const PictureContainer = (props: IExperience) => {
                 <Link
                     href={props.link}
                     target='_blank'
-                    onClick={onClickImage}
+                    onClick={logImageButtonClick(props.title)}
                 >
                     <img
                         src={props.image.src}
@@ -107,7 +108,7 @@ const PictureContainer = (props: IExperience) => {
     );
 };
 
-const ExperienceItem = (props: IExperience) => {
+const ExperienceItem = (props: IExperienceProps) => {
     const classes = useStyles();
 
     return (
@@ -116,56 +117,62 @@ const ExperienceItem = (props: IExperience) => {
             justify='center'
             alignItems='center'
             className={classes.row}
+            direction={(props.index % 2 !== 0) ? 'row' : 'row-reverse'}
+            spacing={10}
         >
             <Grid
                 item
                 xs={12}
-                sm={4}
+                md={6}
             >
                 <PictureContainer {...props}/>
             </Grid>
             <Grid
                 item
                 xs={12}
-                sm={8}
+                md={6}
                 className={classes.content}
             >
-                <Typography
-                    variant='h5'
-                    className={classes.title}
-                    onClick={onClickHeader}
+                <Paper
+                    className={classes.contentContainer}
+                    elevation={8}
                 >
-                    {props.title}
-                </Typography>
-                <Typography variant='h6'>
-                    {props.position}
-                </Typography>
-                <Typography
-                    variant='h6'
-                    className={classes.duration}
-                >
-                    {props.duration}
-                </Typography>
-                {
-                    props.details.map((detail, index) => {
-                        return (
-                            <Grid
-                                container
-                                wrap='nowrap'
-                                key={index}
-                            >
-                                <Grid item>
-                                    <ArrowRight/>
+                    <Typography
+                        variant='h5'
+                        className={classes.title}
+                    >
+                        {props.title}
+                    </Typography>
+                    <Typography variant='h6'>
+                        {props.position}
+                    </Typography>
+                    <Typography
+                        variant='h6'
+                        className={classes.duration}
+                    >
+                        {props.duration}
+                    </Typography>
+                    {
+                        props.details.map((detail, index) => {
+                            return (
+                                <Grid
+                                    container
+                                    wrap='nowrap'
+                                    key={index}
+                                >
+                                    <Grid item>
+                                        <ArrowRight/>
+                                    </Grid>
+                                    <Grid item>
+                                        <Typography variant='body1'>
+                                            {detail}
+                                        </Typography>
+                                    </Grid>
                                 </Grid>
-                                <Grid item>
-                                    <Typography variant='body1'>
-                                        {detail}
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-                        );
-                    })
-                }
+                            );
+                        })
+                    }
+                </Paper>
             </Grid>
         </Grid>
     );

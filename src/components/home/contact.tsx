@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import {
     Typography,
     Button,
@@ -25,13 +26,14 @@ const useStyles = makeStyles({
     },
 });
 
-const onClickEmail = () => {
-    ga('send', {
-        hitType: 'event',
-        eventCategory: 'EmailButton',
-        eventAction: 'click',
-        eventLabel: 'Contact',
-    });
+const logButtonClick = (name: string) => {
+    return () => {
+        ReactGA.event({
+            category: 'Button',
+            action: `Click: ${name}`,
+            label: 'Contact',
+        });
+    };
 };
 
 export const Contact = () => {
@@ -60,7 +62,7 @@ export const Contact = () => {
                             size='large'
                             color='primary'
                             className={classes.emailButton}
-                            onClick={onClickEmail}
+                            onClick={logButtonClick('email')}
                         >
                             {contactData.button.text}
                         </Button>

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import {
     Grid,
     IconButton,
@@ -33,6 +34,14 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
+const logButtonClick = (name: string) => {
+    ReactGA.event({
+        category: 'Button',
+        action: `Click: ${name}`,
+        label: 'Header',
+    });
+};
+
 export const HeaderMobile = () => {
     const classes = useStyles();
     const [state, setState] = React.useState({
@@ -44,23 +53,15 @@ export const HeaderMobile = () => {
     };
 
     const onClickDrawerToggle = () => {
-        ga('send', {
-            hitType: 'event',
-            eventCategory: 'Toggle',
-            eventAction: 'click',
-            eventLabel: 'Header',
-        });
+        logButtonClick('Drawer Toggle');
         toggleDrawer();
     };
 
-    const onClickLink = () => {
-        ga('send', {
-            hitType: 'event',
-            eventCategory: 'Anchor',
-            eventAction: 'click',
-            eventLabel: 'Header',
-        });
-        toggleDrawer();
+    const onClickLink = (name: string) => {
+        return () => {
+            logButtonClick(`${name}`);
+            toggleDrawer();
+        };
     };
 
     return (
@@ -85,7 +86,7 @@ export const HeaderMobile = () => {
                             return (
                                 <ListItem
                                     key={content.indexOf(item)}
-                                    onClick={onClickLink}
+                                    onClick={onClickLink(item.headerContent)}
                                     component={Link}
                                     smooth={true}
                                     duration={500}

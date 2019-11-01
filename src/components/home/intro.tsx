@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import {
     createStyles,
     makeStyles,
@@ -36,22 +37,14 @@ const useStyles = makeStyles((theme) => createStyles({
     },
 }));
 
-const onClickLinkedIn = () => {
-    ga('send', {
-        hitType: 'event',
-        eventCategory: 'LinkedIn',
-        eventAction: 'click',
-        eventLabel: 'Intro',
-    });
-};
-
-const onClickGitHub = () => {
-    ga('send', {
-        hitType: 'event',
-        eventCategory: 'GitHub',
-        eventAction: 'click',
-        eventLabel: 'Intro',
-    });
+const logImageButtonClick = (name: string) => {
+    return () => {
+        ReactGA.event({
+            category: 'ImageButton',
+            action: `Click: ${name}`,
+            label: 'Intro',
+        });
+    };
 };
 
 export const Intro = () => {
@@ -90,7 +83,7 @@ export const Intro = () => {
                     component={Link}
                     href={globals.github}
                     target='_blank'
-                    onClick={onClickGitHub}
+                    onClick={logImageButtonClick('GitHub')}
                 >
                     <GitHub
                         color='primary'
@@ -101,7 +94,7 @@ export const Intro = () => {
                     component={Link}
                     href={globals.linkedin}
                     target='_blank'
-                    onClick={onClickLinkedIn}
+                    onClick={logImageButtonClick('LinkedIn')}
                 >
                     <LinkedIn
                         color='primary'

@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import {
     Grid,
     Button,
@@ -19,13 +20,14 @@ const useStyles = makeStyles({
     },
 });
 
-const onClickLink = () => {
-    ga('send', {
-        hitType: 'event',
-        eventCategory: 'Anchor',
-        eventAction: 'click',
-        eventLabel: 'Header',
-    });
+const logButtonClick = (name: string) => {
+    return () => {
+        ReactGA.event({
+            category: 'Button',
+            action: `Click: ${name}`,
+            label: 'Header',
+        });
+    };
 };
 
 export const HeaderWeb = () => {
@@ -56,7 +58,7 @@ export const HeaderWeb = () => {
                                 to={item.link}
                                 activeClass={classes.active}
                                 className={classes.button}
-                                onClick={onClickLink}
+                                onClick={logButtonClick(item.headerContent)}
                             >
                                 {item.headerContent}
                             </Button>
