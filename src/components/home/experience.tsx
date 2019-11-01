@@ -19,6 +19,7 @@ import {
 import {
     SuperCenter,
     HeaderHR,
+    ImageButton,
 } from '../shared';
 
 const useStyles = makeStyles((theme) => createStyles({
@@ -97,7 +98,7 @@ const PictureContainer = (props: IExperience) => {
                     target='_blank'
                     onClick={logImageButtonClick(props.title)}
                 >
-                    <img
+                    <ImageButton
                         src={props.image.src}
                         alt={props.image.alt}
                         className={classes.image}

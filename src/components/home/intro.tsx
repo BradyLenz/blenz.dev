@@ -5,16 +5,16 @@ import {
     makeStyles,
     Typography,
     Grid,
-    IconButton,
     Link,
 } from '@material-ui/core';
 
 import { globals } from '../../data';
 import {
     SuperCenter,
-    GitHub,
-    LinkedIn,
+    ImageButton,
 } from '../shared';
+import linkedin from '../../assets/linkedin.svg';
+import github from '../../assets/github.svg';
 
 const useStyles = makeStyles((theme) => createStyles({
     greeting: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => createStyles({
         margin: 'auto',
         marginBottom: 100,
     },
-    iconButton: {
+    imageButton: {
         width: '100px',
         height: '100px',
     },
@@ -79,28 +79,32 @@ export const Intro = () => {
                 justify='center'
                 spacing={8}
             >
-                <IconButton
-                    component={Link}
-                    href={globals.github}
-                    target='_blank'
-                    onClick={logImageButtonClick('GitHub')}
-                >
-                    <GitHub
-                        color='primary'
-                        className={classes.iconButton}
-                    />
-                </IconButton>
-                <IconButton
-                    component={Link}
-                    href={globals.linkedin}
-                    target='_blank'
-                    onClick={logImageButtonClick('LinkedIn')}
-                >
-                    <LinkedIn
-                        color='primary'
-                        className={classes.iconButton}
-                    />
-                </IconButton>
+                <Grid item>
+                    <Link
+                        href={globals.github}
+                        target='_blank'
+                        onClick={logImageButtonClick('LinkedIn')}
+                    >
+                        <ImageButton
+                            src={github}
+                            alt='GitHub'
+                            className={classes.imageButton}
+                        />
+                    </Link>
+                </Grid>
+                <Grid item>
+                    <Link
+                        href={globals.linkedin}
+                        target='_blank'
+                        onClick={logImageButtonClick('LinkedIn')}
+                    >
+                        <ImageButton
+                            src={linkedin}
+                            alt='LinkedIn'
+                            className={classes.imageButton}
+                        />
+                    </Link>
+                </Grid>
             </Grid>
         </SuperCenter>
     );
