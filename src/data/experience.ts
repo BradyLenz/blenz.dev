@@ -49,7 +49,7 @@ export const experienceData: IExperienceData = {
             duration: 'April 2017 - Present',
             details: [
                 'A playground for software ideas',
-                'Utilized with many modern technologies such as Python, Typescript, Angular, React, and Node.js',
+                'Utilized many modern technologies such as Python, Typescript, Angular, React, and Node.js',
                 'Worked in a small team exploring software solutions targeting the Transcend UW competition',
             ],
             image: {
