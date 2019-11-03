@@ -7,6 +7,8 @@ import { GridProps } from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
     root: {
+        paddingTop: 64,
+        paddingBottom: 64,
         minHeight: '100vh',
     },
 });
@@ -23,8 +25,8 @@ export const SuperCenter = (props: IProps) => {
             container
             justify='center'
             alignItems='center'
-            className={classes.root}
             direction='column'
+            className={classes.root}
         >
             <Grid item>
                 {props.children}

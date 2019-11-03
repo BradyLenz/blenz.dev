@@ -24,7 +24,14 @@ import {
 
 const useStyles = makeStyles((theme) => createStyles({
     root: {
-        marginTop: 50,
+        width: '100%',
+    },
+    container: {
+        width: '100%',
+    },
+    item: {
+        width: '100%',
+        marginTop: 30,
     },
     image: {
         width: '100%',
@@ -34,20 +41,24 @@ const useStyles = makeStyles((theme) => createStyles({
     },
     content: {
         paddingTop: 20,
-        paddingLeft: 20,
     },
     contentContainer: {
         padding: 32,
     },
-    row: {
-        marginTop: 20,
-    },
     title: {
         color: theme.palette.primary.main,
         fontWeight: 500,
+        marginTop: 50,
     },
-    duration: {
+    contentHeader: {
+        color: theme.palette.primary.main,
+        fontWeight: 500,
+    },
+    location: {
         marginBottom: 10,
+    },
+    row: {
+        paddingTop: 10,
     },
 }));
 
@@ -72,13 +83,23 @@ export const Experience = () => {
         <SuperCenter>
             <HeaderHR text={experienceData.header}/>
             <Box className={classes.root}>
-                {
-                    experienceData.experiences.map((experience, index) => {
-                        return (
-                            <ExperienceItem key={index} {...experience} index={index}/>
-                        );
-                    })
-                }
+                <Grid
+                    container
+                    alignItems='center'
+                    wrap='nowrap'
+                    direction='column'
+                    className={classes.container}
+                >
+                    {
+                        experienceData.experiences.map((experience, index) => {
+                            return (
+                                <Grid item key={index} className={classes.item}>
+                                    <ExperienceItem {...experience} index={index}/>
+                                </Grid>
+                            );
+                        })
+                    }
+                </Grid>
             </Box>
         </SuperCenter>
     );
@@ -113,68 +134,78 @@ const ExperienceItem = (props: IExperienceProps) => {
     const classes = useStyles();
 
     return (
-        <Grid
-            container
-            justify='center'
-            alignItems='center'
-            className={classes.row}
-            direction={(props.index % 2 !== 0) ? 'row' : 'row-reverse'}
-            spacing={10}
-        >
-            <Grid
-                item
-                xs={12}
-                md={6}
+        <>
+            <Typography
+                variant='h4'
+                align='center'
+                className={classes.title}
             >
-                <PictureContainer {...props}/>
-            </Grid>
+                {props.title}
+            </Typography>
             <Grid
-                item
-                xs={12}
-                md={6}
-                className={classes.content}
+                container
+                justify='center'
+                alignItems='center'
+                direction={(props.index % 2 !== 0) ? 'row' : 'row-reverse'}
+                className={classes.row}
             >
-                <Paper
-                    className={classes.contentContainer}
-                    elevation={8}
+                <Grid
+                    item
+                    xs={12}
+                    sm={6}
                 >
-                    <Typography
-                        variant='h5'
-                        className={classes.title}
+                    <PictureContainer {...props}/>
+                </Grid>
+                <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    className={classes.content}
+                >
+                    <Paper
+                        className={classes.contentContainer}
+                        elevation={8}
                     >
-                        {props.title}
-                    </Typography>
-                    <Typography variant='h6'>
-                        {props.position}
-                    </Typography>
-                    <Typography
-                        variant='h6'
-                        className={classes.duration}
-                    >
-                        {props.duration}
-                    </Typography>
-                    {
-                        props.details.map((detail, index) => {
-                            return (
-                                <Grid
-                                    container
-                                    wrap='nowrap'
-                                    key={index}
-                                >
-                                    <Grid item>
-                                        <ArrowRight/>
+                        <Typography
+                            variant='h6'
+                            className={classes.contentHeader}
+                        >
+                            {props.position}
+                        </Typography>
+                        <Typography
+                            variant='h6'
+                        >
+                            {props.duration}
+                        </Typography>
+                        <Typography
+                            variant='h6'
+                            className={classes.location}
+                        >
+                            {props.location}
+                        </Typography>
+                        {
+                            props.details.map((detail, index) => {
+                                return (
+                                    <Grid
+                                        container
+                                        wrap='nowrap'
+                                        key={index}
+                                    >
+                                        <Grid item>
+                                            <ArrowRight/>
+                                        </Grid>
+                                        <Grid item>
+                                            <Typography variant='body1'>
+                                                {detail}
+                                            </Typography>
+                                        </Grid>
                                     </Grid>
-                                    <Grid item>
-                                        <Typography variant='body1'>
-                                            {detail}
-                                        </Typography>
-                                    </Grid>
-                                </Grid>
-                            );
-                        })
-                    }
-                </Paper>
+                                );
+                            })
+                        }
+                    </Paper>
+                </Grid>
             </Grid>
-        </Grid>
+        </>
     );
 };
