@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => createStyles({
         whiteSpace: 'nowrap',
         margin: 'auto',
         '&::before': {
-            backgroundColor: theme.palette.secondary.main,
+            backgroundColor: theme.palette.primary.main,
             content: '""',
             display: 'block',
             height: 2,
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => createStyles({
             },
         },
         '&::after': {
-            backgroundColor: theme.palette.secondary.main,
+            backgroundColor: theme.palette.primary.main,
             content: '""',
             display: 'block',
             height: 2,
