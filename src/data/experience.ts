@@ -17,6 +17,7 @@ export interface IExperience {
     duration: string;
     details: string[];
     image: IImage;
+    location: string;
 }
 
 interface IImage {
@@ -39,6 +40,7 @@ export const experienceData: IExperienceData = {
                 src: uw,
                 alt: 'UW-Madison',
             },
+            location: 'Madison, WI',
         },
         {
             title: 'Sudo.X',
@@ -54,6 +56,7 @@ export const experienceData: IExperienceData = {
                 src: sudox.default,
                 alt: 'Sudo.X',
             },
+            location: 'Madison, WI',
         },
         {
             title: 'TDS Telecom',
@@ -69,6 +72,7 @@ export const experienceData: IExperienceData = {
                 src: tds,
                 alt: 'TDS Telecom',
             },
+            location: 'Madison, WI',
         },
         {
             title: 'UW-Madison RecWell',
@@ -83,6 +87,7 @@ export const experienceData: IExperienceData = {
                 src: recwell.default,
                 alt: 'RecWell',
             },
+            location: 'Madison, WI',
         },
         {
             title: 'MadHacks Carbon',
@@ -90,11 +95,13 @@ export const experienceData: IExperienceData = {
             duration: 'October 19-20 2019',
             details: [
                 'UW-Madison hackathon with emphasis on sustainable living',
+                'Worked in a team of two to develop a full cloud app in less than 24 hours',
             ],
             image: {
                 src: madhacks.default,
                 alt: 'MadHacks',
             },
+            location: 'Madison, WI',
         },
         {
             title: 'QGenda',
@@ -102,13 +109,15 @@ export const experienceData: IExperienceData = {
             position: 'Product Development Intern',
             duration: 'Summer 2019',
             details: [
-                'Developed code in Typescript, C#, React, Redux, LINQ',
-                'Worked in an agile development team',
+                'Worked on a team of developers following agile devlopment practices',
+                'Developed and maintained code for various aspects of the QGenda dashboard',
+                'Utilized Typescript, React, Reudx, C#, and LINQ for full-stack development',
             ],
             image: {
                 src: qgenda.default,
                 alt: 'QGenda',
             },
+            location: 'Atlanta, GA',
         },
     ],
 };
