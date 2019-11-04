@@ -14,5 +14,5 @@ export const globals: IGlobals = {
     in machine learning and optimization.
     `,
     github: 'https://github.com/bradylenz',
-    linkedin: 'https://www.linkedin.com/in/brlenz/',
+    linkedin: 'https://linkedin.com/in/brlenz',
 };
