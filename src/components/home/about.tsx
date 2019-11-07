@@ -79,23 +79,24 @@ export const About = () => {
                     sm={8}
                     className={classes.content}
                 >
-                    <Typography variant='body1'>
+                    <Typography variant='body1' color='textPrimary'>
                         I am a highly motivated individual, possessing excellent time management skills.
                         Some topics of particular interest to me include machine learning and optimization.
                     </Typography>
                     <Typography
                         variant='body1'
                         className={classes.lineSpace}
+                        color='textPrimary'
                     >
                         I will be graduating from the
                         &nbsp;
-                        <Link href='https://wisc.edu' target='_blank' onClick={logLinkClick('wisc')}>
+                        <Link href='https://wisc.edu' target='_blank' color='secondary' onClick={logLinkClick('wisc')}>
                             University of Wisconsin - Madison
                         </Link>
                         &nbsp;
                         in December 2019 with degrees in Computer Science and Mathematics.
                     </Typography>
-                    <Typography variant='body1' className={classes.lineSpace}>
+                    <Typography variant='body1' className={classes.lineSpace} color='textPrimary'>
                         Here are some technologies I'm familiar with:
                     </Typography>
                     <Grid
@@ -113,10 +114,12 @@ export const About = () => {
                                     >
                                         <Grid container>
                                             <Grid item>
-                                                <ArrowRight/>
+                                                <ArrowRight color='secondary'/>
                                             </Grid>
                                             <Grid item>
-                                                {skill}
+                                                <Typography variant='body1' color='textPrimary'>
+                                                    {skill}
+                                                </Typography>
                                             </Grid>
                                         </Grid>
                                     </Grid>

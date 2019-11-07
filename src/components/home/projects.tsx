@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => createStyles({
         minHeight: 300,
     },
     header: {
-        color: theme.palette.primary.main,
+        color: theme.palette.secondary.main,
     },
     skills: {
         marginLeft: 8,

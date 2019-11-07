@@ -9,17 +9,13 @@ import {
 
 import { Home } from './components/home';
 import theme from './theme';
-import {
-    Box,
-    CssBaseline,
-} from '@material-ui/core';
+import { CssBaseline } from '@material-ui/core';
 
 export const App = () => {
     return (
         <BrowserRouter>
             <ThemeProvider theme={theme}>
                 <CssBaseline/>
-                <Box>
                     <Switch>
                         <Route
                             path='/'
@@ -27,7 +23,6 @@ export const App = () => {
                         />
                         <Redirect to='/'/>
                     </Switch>
-                </Box>
             </ThemeProvider>
         </BrowserRouter>
     );

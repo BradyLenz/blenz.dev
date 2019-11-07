@@ -2,8 +2,8 @@ import React from 'react';
 import {
     Box,
     Container,
-    makeStyles,
 } from '@material-ui/core';
+import { ThemeProvider } from '@material-ui/styles';
 
 import {
     Header,
@@ -14,16 +14,10 @@ import {
     content,
 } from '../../data';
 import { Intro } from '.';
-
-const useStyles = makeStyles({
-    fullWidth: {
-        width: '100%',
-    },
-});
+import theme from '../../theme';
+import darkTheme from '../../theme-dark';
 
 export const Home = () => {
-    const classes = useStyles();
-
     return (
         <>
             <Header/>
@@ -31,19 +25,19 @@ export const Home = () => {
                 {
                     content.map((item: ISection, index: number) => {
                         return (
-                                <Box
-                                    minHeight='100vh'
-                                    id={item.link}
-                                    bgcolor={(index % 2 !== 0) ? undefined : '#a5b7bd'}
-                                    key={index}
-                                    className={classes.fullWidth}
-                                >
-                                    <Container maxWidth='lg'>
+                            <Box
+                                id={item.link}
+                                bgcolor={(index % 2 !== 0) ? undefined : 'primary.dark'}
+                                key={index}
+                            >
+                                <Container maxWidth='lg'>
+                                    <ThemeProvider theme={(index % 2 !== 0) ? theme : darkTheme}>
                                         {
                                             item.element(item)
                                         }
-                                    </Container>
-                                </Box>
+                                    </ThemeProvider>
+                                </Container>
+                            </Box>
                         );
                     })
                 }
