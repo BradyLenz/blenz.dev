@@ -4,6 +4,7 @@ import {
     Container,
 } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
+import ScrollTrigger from 'react-scroll-trigger';
 
 import {
     Header,
@@ -21,26 +22,32 @@ export const Home = () => {
     return (
         <>
             <Header/>
-                <Intro/>
-                {
-                    content.map((item: ISection, index: number) => {
-                        return (
-                            <Box
-                                id={item.link}
-                                bgcolor={(index % 2 !== 0) ? undefined : 'primary.dark'}
-                                key={index}
-                            >
-                                <Container maxWidth='lg'>
-                                    <ThemeProvider theme={(index % 2 !== 0) ? theme : darkTheme}>
-                                        {
-                                            item.element(item)
-                                        }
-                                    </ThemeProvider>
-                                </Container>
-                            </Box>
-                        );
-                    })
-                }
+            <Box height={10}/>
+            <Intro/>
+            {
+                content.map((item: ISection, index: number) => {
+                    let visible = false;
+                    const onEnterViewPort = () => {
+                        visible = true;
+                    };
+                    return (
+                        <Box
+                            id={item.link}
+                            bgcolor={(index % 2 !== 0) ? undefined : 'primary.dark'}
+                            key={index}
+                        >
+                            <Container maxWidth='lg'>
+                                <ThemeProvider theme={(index % 2 !== 0) ? theme : darkTheme}>
+                                    <ScrollTrigger onEnter={onEnterViewPort}/>
+                                    {
+                                        item.element(item)
+                                    }
+                                </ThemeProvider>
+                            </Container>
+                        </Box>
+                    );
+                })
+            }
             <Footer/>
         </>
     );
