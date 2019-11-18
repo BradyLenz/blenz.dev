@@ -1,6 +1,6 @@
 export * from './home';
-export * from './about';
+export { default as About } from './about';
 export * from './intro';
-export * from './contact';
-export * from './experience';
-export * from './projects';
+export { default as Contact } from './contact';
+export { default as Experience } from './experience';
+export { default as Projects } from './projects';

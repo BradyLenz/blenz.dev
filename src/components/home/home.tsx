@@ -4,7 +4,6 @@ import {
     Container,
 } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/styles';
-import ScrollTrigger from 'react-scroll-trigger';
 
 import {
     Header,
@@ -26,10 +25,6 @@ export const Home = () => {
             <Intro/>
             {
                 content.map((item: ISection, index: number) => {
-                    let visible = false;
-                    const onEnterViewPort = () => {
-                        visible = true;
-                    };
                     return (
                         <Box
                             id={item.link}
@@ -38,7 +33,6 @@ export const Home = () => {
                         >
                             <Container maxWidth='lg'>
                                 <ThemeProvider theme={(index % 2 !== 0) ? theme : darkTheme}>
-                                    <ScrollTrigger onEnter={onEnterViewPort}/>
                                     {
                                         item.element(item)
                                     }

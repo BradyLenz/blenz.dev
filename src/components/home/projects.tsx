@@ -17,6 +17,9 @@ import { projectData } from '../../data';
 import {
     SuperCenter,
     HeaderHR,
+    withScrollTrigger,
+    Fade,
+    DropFade,
 } from '../shared';
 
 const useStyles = makeStyles((theme) => createStyles({
@@ -50,12 +53,14 @@ const navigate = (link: string) => {
     };
 };
 
-export const Projects = () => {
+const Projects = () => {
     const classes = useStyles();
 
     return (
         <SuperCenter>
-            <HeaderHR text={projectData.header}/>
+            <DropFade>
+                <HeaderHR text={projectData.header}/>
+            </DropFade>
             <Grid
                 container
                 justify='center'
@@ -73,50 +78,52 @@ export const Projects = () => {
                                 xs={10}
                                 md={6}
                             >
-                                <Card
-                                    className={classes.card}
-                                >
-                                    <CardActionArea onClick={navigate(project.link)}>
-                                        <CardMedia
-                                            component='img'
-                                            image={project.image.src}
-                                            title={project.image.alt}
-                                        />
-                                        <CardHeader
-                                            title={project.title}
-                                            className={classes.header}
-                                        />
-                                        <CardContent>
-                                            <Typography variant='body1'>
-                                                {project.description}
-                                            </Typography>
-                                        </CardContent>
-                                    </CardActionArea>
-                                    <CardActions>
-                                        <Grid
-                                            container
-                                            spacing={4}
-                                        >
-                                            {
-                                                project.skills.map((skill, j) => {
-                                                    return (
-                                                        <Grid
-                                                            item
-                                                            key={j}
-                                                        >
-                                                            <Typography
-                                                                variant='body1'
-                                                                className={classes.skills}
+                                <Fade>
+                                    <Card
+                                        className={classes.card}
+                                    >
+                                        <CardActionArea onClick={navigate(project.link)}>
+                                            <CardMedia
+                                                component='img'
+                                                image={project.image.src}
+                                                title={project.image.alt}
+                                            />
+                                            <CardHeader
+                                                title={project.title}
+                                                className={classes.header}
+                                            />
+                                            <CardContent>
+                                                <Typography variant='body1'>
+                                                    {project.description}
+                                                </Typography>
+                                            </CardContent>
+                                        </CardActionArea>
+                                        <CardActions>
+                                            <Grid
+                                                container
+                                                spacing={4}
+                                            >
+                                                {
+                                                    project.skills.map((skill, j) => {
+                                                        return (
+                                                            <Grid
+                                                                item
+                                                                key={j}
                                                             >
-                                                                {skill}
-                                                            </Typography>
-                                                        </Grid>
-                                                    );
-                                                })
-                                            }
-                                        </Grid>
-                                    </CardActions>
-                                </Card>
+                                                                <Typography
+                                                                    variant='body1'
+                                                                    className={classes.skills}
+                                                                >
+                                                                    {skill}
+                                                                </Typography>
+                                                            </Grid>
+                                                        );
+                                                    })
+                                                }
+                                            </Grid>
+                                        </CardActions>
+                                    </Card>
+                                </Fade>
                             </Grid>
                         );
                     })
@@ -125,3 +132,5 @@ export const Projects = () => {
         </SuperCenter>
     );
 };
+
+export default withScrollTrigger(Projects);

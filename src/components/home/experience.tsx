@@ -20,6 +20,11 @@ import {
     SuperCenter,
     HeaderHR,
     ImageButton,
+    withScrollTrigger,
+    DropFade,
+    LeftFade,
+    RightFade,
+    Fade,
 } from '../shared';
 
 const useStyles = makeStyles((theme) => createStyles({
@@ -76,12 +81,14 @@ interface IExperienceProps extends IExperience {
     index: number;
 }
 
-export const Experience = () => {
+const Experience = () => {
     const classes = useStyles();
 
     return (
         <SuperCenter>
-            <HeaderHR text={experienceData.header}/>
+            <DropFade>
+                <HeaderHR text={experienceData.header}/>
+            </DropFade>
             <Box className={classes.root}>
                 <Grid
                     container
@@ -133,8 +140,8 @@ const PictureContainer = (props: IExperience) => {
 const ExperienceItem = (props: IExperienceProps) => {
     const classes = useStyles();
 
-    return (
-        <>
+    const title = () => {
+        return (
             <Typography
                 variant='h4'
                 align='center'
@@ -142,6 +149,11 @@ const ExperienceItem = (props: IExperienceProps) => {
             >
                 {props.title}
             </Typography>
+        );
+    };
+
+    const data = () => {
+        return (
             <Grid
                 container
                 justify='center'
@@ -166,46 +178,91 @@ const ExperienceItem = (props: IExperienceProps) => {
                         className={classes.contentContainer}
                         elevation={8}
                     >
-                        <Typography
-                            variant='h6'
-                            className={classes.contentHeader}
-                        >
-                            {props.position}
-                        </Typography>
-                        <Typography
-                            variant='h6'
-                        >
-                            {props.duration}
-                        </Typography>
-                        <Typography
-                            variant='h6'
-                            className={classes.location}
-                        >
-                            {props.location}
-                        </Typography>
+                        <Fade>
+                            <Typography
+                                variant='h6'
+                                className={classes.contentHeader}
+                            >
+                                {props.position}
+                            </Typography>
+                        </Fade>
+                        <Fade>
+                            <Typography
+                                variant='h6'
+                            >
+                                {props.duration}
+                            </Typography>
+                        </Fade>
+                        <Fade>
+                            <Typography
+                                variant='h6'
+                                className={classes.location}
+                            >
+                                {props.location}
+                            </Typography>
+                        </Fade>
                         {
                             props.details.map((detail, index) => {
                                 return (
-                                    <Grid
-                                        container
-                                        wrap='nowrap'
-                                        key={index}
-                                    >
-                                        <Grid item>
-                                            <ArrowRight/>
+                                    <Fade key={index}>
+                                        <Grid
+                                            container
+                                            wrap='nowrap'
+                                        >
+                                            <Grid item>
+                                                <ArrowRight/>
+                                            </Grid>
+                                            <Grid item>
+                                                <Typography variant='body1'>
+                                                    {detail}
+                                                </Typography>
+                                            </Grid>
                                         </Grid>
-                                        <Grid item>
-                                            <Typography variant='body1'>
-                                                {detail}
-                                            </Typography>
-                                        </Grid>
-                                    </Grid>
+                                    </Fade>
                                 );
                             })
                         }
                     </Paper>
                 </Grid>
             </Grid>
+        );
+    };
+
+    return (
+        <>
+            {
+                props.index % 2 !== 0
+                ? (
+                    <>
+                        <RightFade>
+                            {
+                                title()
+                            }
+                        </RightFade>
+                        <RightFade>
+                            {
+                                data()
+                            }
+                        </RightFade>
+                    </>
+                )
+                : (
+                    <>
+                        <LeftFade>
+                            {
+                                title()
+                            }
+                        </LeftFade>
+                        <LeftFade>
+                            {
+                                data()
+                            }
+                        </LeftFade>
+                    </>
+                )
+            }
         </>
     );
 };
+
+export default withScrollTrigger(Experience);

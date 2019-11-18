@@ -1,2 +1,2 @@
 /// <reference types="react-scripts" />
-declare module 'react-scroll-trigger'
+declare module 'react-scroll-trigger';

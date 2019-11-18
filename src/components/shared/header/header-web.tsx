@@ -1,4 +1,5 @@
 import React from 'react';
+import posed from 'react-pose';
 import ReactGA from 'react-ga';
 import {
     Grid,
@@ -19,6 +20,23 @@ const useStyles = makeStyles({
         fontWeight: 'bolder',
     },
 });
+
+const LeftFade = posed.div({
+    load: {
+        x: '0px',
+        opacity: 1,
+        transition: {
+            duration: 500,
+        },
+    },
+    init: {
+        x: '-100px',
+        opacity: 0,
+        transition: {
+            duration: 500,
+        },
+    },
+  });
 
 const logButtonClick = (name: string) => {
     return () => {
@@ -47,21 +65,23 @@ export const HeaderWeb = () => {
                             key={content.indexOf(item)}
                             item
                         >
-                            <Button
-                                variant='outlined'
-                                color='secondary'
-                                component={Link}
-                                smooth={true}
-                                duration={500}
-                                spy={true}
-                                hashSpy={true}
-                                to={item.link}
-                                activeClass={classes.active}
-                                className={classes.button}
-                                onClick={logButtonClick(item.headerContent)}
-                            >
-                                {item.headerContent}
-                            </Button>
+                            <LeftFade>
+                                <Button
+                                    variant='outlined'
+                                    color='secondary'
+                                    component={Link}
+                                    smooth={true}
+                                    duration={500}
+                                    spy={true}
+                                    hashSpy={true}
+                                    to={item.link}
+                                    activeClass={classes.active}
+                                    className={classes.button}
+                                    onClick={logButtonClick(item.headerContent)}
+                                >
+                                    {item.headerContent}
+                                </Button>
+                            </LeftFade>
                         </Grid>
                     );
                 })

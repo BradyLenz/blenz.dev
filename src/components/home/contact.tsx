@@ -12,6 +12,8 @@ import { contactData } from '../../data';
 import {
     SuperCenter,
     HeaderHR,
+    withScrollTrigger,
+    DropFade,
 } from '../shared';
 
 const useStyles = makeStyles({
@@ -36,18 +38,22 @@ const logButtonClick = (name: string) => {
     };
 };
 
-export const Contact = () => {
+const Contact = () => {
     const classes = useStyles();
 
     return (
         <SuperCenter>
-            <HeaderHR text={contactData.header}/>
-            <Typography
-                align='center'
-                className={classes.message}
-            >
-                {contactData.message}
-            </Typography>
+            <DropFade>
+                <HeaderHR text={contactData.header}/>
+            </DropFade>
+            <DropFade>
+                <Typography
+                    align='center'
+                    className={classes.message}
+                >
+                    {contactData.message}
+                </Typography>
+            </DropFade>
             <Grid
                 container
                 justify='center'
@@ -57,18 +63,22 @@ export const Contact = () => {
                         href={contactData.button.link}
                         target='_blank'
                     >
-                        <Button
-                            variant='contained'
-                            size='large'
-                            color='primary'
-                            className={classes.emailButton}
-                            onClick={logButtonClick('email')}
-                        >
-                            {contactData.button.text}
-                        </Button>
+                        <DropFade>
+                            <Button
+                                variant='contained'
+                                size='large'
+                                color='primary'
+                                className={classes.emailButton}
+                                onClick={logButtonClick('email')}
+                            >
+                                {contactData.button.text}
+                            </Button>
+                        </DropFade>
                     </Link>
                 </Grid>
             </Grid>
         </SuperCenter>
     );
 };
+
+export default withScrollTrigger(Contact);

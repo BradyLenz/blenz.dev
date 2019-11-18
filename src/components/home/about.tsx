@@ -14,6 +14,9 @@ import { aboutData } from '../../data';
 import {
     SuperCenter,
     HeaderHR,
+    DropFade,
+    LeftFade,
+    withScrollTrigger,
 } from '../shared';
 
 const useStyles = makeStyles((theme) => createStyles({
@@ -67,7 +70,9 @@ export const About = () => {
 
     return (
         <SuperCenter>
-            <HeaderHR text={aboutData.header}/>
+            <DropFade>
+                <HeaderHR text={aboutData.header}/>
+            </DropFade>
             <Grid
                 container
                 justify='center'
@@ -79,26 +84,37 @@ export const About = () => {
                     sm={8}
                     className={classes.content}
                 >
-                    <Typography variant='body1' color='textPrimary'>
-                        I am a highly motivated individual, possessing excellent time management skills.
-                        Some topics of particular interest to me include machine learning and optimization.
-                    </Typography>
-                    <Typography
-                        variant='body1'
-                        className={classes.lineSpace}
-                        color='textPrimary'
-                    >
-                        I will be graduating from the
-                        &nbsp;
-                        <Link href='https://wisc.edu' target='_blank' color='secondary' onClick={logLinkClick('wisc')}>
-                            University of Wisconsin - Madison
-                        </Link>
-                        &nbsp;
-                        in December 2019 with degrees in Computer Science and Mathematics.
-                    </Typography>
-                    <Typography variant='body1' className={classes.lineSpace} color='textPrimary'>
-                        Here are some technologies I'm familiar with:
-                    </Typography>
+                    <LeftFade>
+                        <Typography variant='body1' color='textPrimary'>
+                            I am a highly motivated individual, possessing excellent time management skills.
+                            Some topics of particular interest to me include machine learning and optimization.
+                        </Typography>
+                    </LeftFade>
+                    <LeftFade>
+                        <Typography
+                            variant='body1'
+                            className={classes.lineSpace}
+                            color='textPrimary'
+                        >
+                            I will be graduating from the
+                            &nbsp;
+                            <Link
+                                href='https://wisc.edu'
+                                target='_blank'
+                                color='secondary'
+                                onClick={logLinkClick('wisc')}
+                            >
+                                University of Wisconsin - Madison
+                            </Link>
+                            &nbsp;
+                            in December 2019 with degrees in Computer Science and Mathematics.
+                        </Typography>
+                    </LeftFade>
+                    <LeftFade>
+                        <Typography variant='body1' className={classes.lineSpace} color='textPrimary'>
+                            Here are some technologies I'm familiar with:
+                        </Typography>
+                    </LeftFade>
                     <Grid
                         container
                         justify='center'
@@ -112,38 +128,42 @@ export const About = () => {
                                         item
                                         xs={6}
                                     >
-                                        <Grid container>
-                                            <Grid item>
-                                                <ArrowRight color='secondary'/>
+                                        <LeftFade>
+                                            <Grid container>
+                                                <Grid item>
+                                                    <ArrowRight color='secondary'/>
+                                                </Grid>
+                                                <Grid item>
+                                                    <Typography variant='body1' color='textPrimary'>
+                                                        {skill}
+                                                    </Typography>
+                                                </Grid>
                                             </Grid>
-                                            <Grid item>
-                                                <Typography variant='body1' color='textPrimary'>
-                                                    {skill}
-                                                </Typography>
-                                            </Grid>
-                                        </Grid>
+                                        </LeftFade>
                                     </Grid>
                                 );
                             })
                         }
                     </Grid>
-                    <Grid
-                        container
-                        justify='flex-start'
-                    >
-                        <Grid item>
-                            <Button
-                                variant='contained'
-                                color='primary'
-                                href={aboutData.button.link}
-                                target='_blank'
-                                className={classes.button}
-                                onClick={logButtonClick('Resume')}
-                            >
-                                {aboutData.button.text}
-                            </Button>
+                    <LeftFade>
+                        <Grid
+                            container
+                            justify='flex-start'
+                        >
+                            <Grid item>
+                                <Button
+                                    variant='contained'
+                                    color='primary'
+                                    href={aboutData.button.link}
+                                    target='_blank'
+                                    className={classes.button}
+                                    onClick={logButtonClick('Resume')}
+                                >
+                                    {aboutData.button.text}
+                                </Button>
+                            </Grid>
                         </Grid>
-                    </Grid>
+                    </LeftFade>
                 </Grid>
                 <Grid
                     item
@@ -165,3 +185,5 @@ export const About = () => {
         </SuperCenter>
     );
 };
+
+export default withScrollTrigger(About);
