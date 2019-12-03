@@ -29,7 +29,7 @@ export const experienceData: IExperienceData = {
     header: 'Experience',
     experiences: [
         {
-            title: 'University of Wisconsin-Madison',
+            title: 'UW Madison',
             link: 'https://www.wisc.edu/',
             duration: 'September 2016 - Present',
             details: [
@@ -111,7 +111,7 @@ export const experienceData: IExperienceData = {
             details: [
                 'Worked on a team of developers following agile devlopment practices',
                 'Developed and maintained code for various aspects of the QGenda dashboard',
-                'Utilized Typescript, React, Reudx, C#, and LINQ for full-stack development',
+                'Utilized Typescript, React, Redux, C#, and LINQ for full-stack development',
             ],
             image: {
                 src: qgenda.default,
