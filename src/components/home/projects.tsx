@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => createStyles({
         marginTop: 40,
     },
     card: {
+        margin: 15,
         minHeight: 300,
     },
     header: {
@@ -59,14 +60,13 @@ const Projects = () => {
     return (
         <SuperCenter>
             <DropFade>
-                <HeaderHR text={projectData.header}/>
+                <HeaderHR text={projectData.header} />
             </DropFade>
             <Grid
                 container
                 justify='center'
                 alignItems='center'
                 direction='column'
-                spacing={8}
                 className={classes.root}
             >
                 {
@@ -99,10 +99,7 @@ const Projects = () => {
                                             </CardContent>
                                         </CardActionArea>
                                         <CardActions>
-                                            <Grid
-                                                container
-                                                spacing={4}
-                                            >
+                                            <Grid container>
                                                 {
                                                     project.skills.map((skill, j) => {
                                                         return (

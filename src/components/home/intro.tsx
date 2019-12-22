@@ -33,8 +33,9 @@ const useStyles = makeStyles((theme) => createStyles({
         marginBottom: 100,
     },
     imageButton: {
-        width: '100px',
-        height: '100px',
+        padding: 15,
+        width: '130px',
+        height: '130px',
     },
 }));
 
@@ -120,7 +121,6 @@ export const Intro = () => {
             <Grid
                 container
                 justify='center'
-                spacing={8}
             >
                 <Grid item>
                     <Zoom>

@@ -21,7 +21,7 @@ interface Image {
 }
 
 export const projectData: IProjectData = {
-    header: 'Featured Projects',
+    header: 'Projects',
     projects: [
         {
             title: 'blenz.dev',

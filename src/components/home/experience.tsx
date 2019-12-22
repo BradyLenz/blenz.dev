@@ -5,7 +5,6 @@ import {
     makeStyles,
     createStyles,
     Typography,
-    Box,
     Link,
     Paper,
 } from '@material-ui/core';
@@ -89,25 +88,23 @@ const Experience = () => {
             <DropFade>
                 <HeaderHR text={experienceData.header}/>
             </DropFade>
-            <Box className={classes.root}>
-                <Grid
-                    container
-                    alignItems='center'
-                    wrap='nowrap'
-                    direction='column'
-                    className={classes.container}
-                >
-                    {
-                        experienceData.experiences.map((experience, index) => {
-                            return (
-                                <Grid item key={index} className={classes.item}>
-                                    <ExperienceItem {...experience} index={index}/>
-                                </Grid>
-                            );
-                        })
-                    }
-                </Grid>
-            </Box>
+            <Grid
+                container
+                alignItems='center'
+                wrap='nowrap'
+                direction='column'
+                className={classes.container}
+            >
+                {
+                    experienceData.experiences.map((experience, index) => {
+                        return (
+                            <Grid item key={index} className={classes.item}>
+                                <ExperienceItem {...experience} index={index}/>
+                            </Grid>
+                        );
+                    })
+                }
+            </Grid>
         </SuperCenter>
     );
 };
