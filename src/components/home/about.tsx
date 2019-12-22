@@ -96,7 +96,7 @@ export const About = () => {
                             className={classes.lineSpace}
                             color='textPrimary'
                         >
-                            I will be graduating from the
+                            I graduated from the
                             &nbsp;
                             <Link
                                 href='https://wisc.edu'

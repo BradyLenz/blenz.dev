@@ -2,8 +2,8 @@ import * as qgenda from '../assets/experience/qgenda.png';
 import * as sudox from '../assets/experience/sudox.png';
 import * as madhacks from '../assets/experience/madhacks.png';
 import * as recwell from '../assets/experience/recwell.png';
+import * as tds from '../assets/experience/tds.png';
 import uw from '../assets/experience/uw.svg';
-import tds from '../assets/experience/tds.svg';
 
 export interface IExperienceData {
     header: string;
@@ -31,7 +31,8 @@ export const experienceData: IExperienceData = {
         {
             title: 'UW Madison',
             link: 'https://www.wisc.edu/',
-            duration: 'September 2016 - Present',
+            position: 'Student',
+            duration: 'September 2016 - December 2019',
             details: [
                 'B.S. in Computer Science and Mathematics',
                 'Involvement in Transcend UW, MadHacks, and Club Wrestling',
@@ -69,7 +70,7 @@ export const experienceData: IExperienceData = {
                 'Developed a pair of services to aid in outage detection',
             ],
             image: {
-                src: tds,
+                src: tds.default,
                 alt: 'TDS Telecom',
             },
             location: 'Madison, WI',
@@ -78,7 +79,7 @@ export const experienceData: IExperienceData = {
             title: 'UW-Madison RecWell',
             link: 'https://recwell.wisc.edu',
             position: 'Facility Supervisor',
-            duration: 'November 2017 - Present',
+            duration: 'November 2017 - December 2019',
             details: [
                 'Gained valuable leadership skills from overseeing student employees on shift',
                 'Handled member-service related interactions and decisions',
@@ -92,9 +93,10 @@ export const experienceData: IExperienceData = {
         {
             title: 'MadHacks Carbon',
             link: 'https://www.madhacks.io/#/',
+            position: 'Competitor',
             duration: 'October 19-20 2019',
             details: [
-                'UW-Madison hackathon with emphasis on sustainable living',
+                'UW-Madison hackathon with an emphasis on sustainable living',
                 'Worked in a team of two to develop a full cloud app in less than 24 hours',
             ],
             image: {
@@ -109,7 +111,7 @@ export const experienceData: IExperienceData = {
             position: 'Product Development Intern',
             duration: 'Summer 2019',
             details: [
-                'Worked on a team of developers following agile devlopment practices',
+                'Worked on a team of developers following agile development practices',
                 'Developed and maintained code for various aspects of the QGenda dashboard',
                 'Utilized Typescript, React, Redux, C#, and LINQ for full-stack development',
             ],
