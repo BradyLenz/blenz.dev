@@ -12,7 +12,7 @@ interface IButton {
 export const contactData: IContact = {
     header: 'Contact Me',
     message: `
-        I am currently looking for a full-time position as a Software Engineer.
+        I am not currently looking for job opportunities, but my inbox is always open!
         Feel free to contact me via email or LinkedIn.
     `,
     button: {
